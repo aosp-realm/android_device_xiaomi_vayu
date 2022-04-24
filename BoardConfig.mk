@@ -130,9 +130,6 @@ $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-l
 
 BOARD_USES_METADATA_PARTITION := true
 
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
 BOARD_USES_QCOM_HARDWARE := true
