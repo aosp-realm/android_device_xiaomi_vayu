@@ -86,6 +86,9 @@ function blob_fixup() {
         vendor/etc/dolby/dax-default.xml)
             sed -i "/volume-leveler-enable/ s/true/false/g" "${2}"
             ;;
+        vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy)
+            echo 'madvise: 1' >> ${2}
+            ;;
     esac
 }
 
