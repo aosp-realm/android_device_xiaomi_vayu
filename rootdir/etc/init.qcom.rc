@@ -471,6 +471,9 @@ service vendor.loc_launcher vendor/bin/loc_launcher
     group gps
     task_profiles ServiceCapacityLow
 
+on property:persist.sys.xtra-daemon.enabled=*
+    restart loc_launcher
+
 service drmdiag /system/vendor/bin/drmdiagapp
     class late_start
      user root
