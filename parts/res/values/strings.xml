@@ -86,4 +86,12 @@
 
     <!-- Xiaomi Parts Label -->
     <string name="xiaomiparts_label">Xiaomi Parts</string>
+
+    <!-- Dolby Atmos -->
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_enable">Enable</string>
+    <string name="dolby_summary">Surround sound</string>
+    <string name="dolby_profile_title">Choose a profile</string>
+    <string name="dolby_profile_dynamic">Dynamic</string>
+
 </resources>
