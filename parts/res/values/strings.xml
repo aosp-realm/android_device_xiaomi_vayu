@@ -118,4 +118,7 @@
     <string name="dolby_reset_profile">Reset to defaults</string>
     <string name="dolby_reset_profile_toast">Succesfully reset settings for %1$s profile</string>
 
+    <!-- Xiaomi Parts -->
+    <string name="app_name">Xiaomi Parts</string>
+
 </resources>
