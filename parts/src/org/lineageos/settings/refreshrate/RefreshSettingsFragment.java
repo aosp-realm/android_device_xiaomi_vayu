@@ -191,10 +191,6 @@ public class RefreshSettingsFragment extends PreferenceFragment
     private int getStateDrawable(int state) {
         switch (state) {
             case RefreshUtils.STATE_LOW:
-                return R.drawable.ic_refresh_30;
-            case RefreshUtils.STATE_MODERATE:
-                return R.drawable.ic_refresh_50;
-            case RefreshUtils.STATE_MEDIUM:
                 return R.drawable.ic_refresh_60;
             case RefreshUtils.STATE_HIGH:
                 return R.drawable.ic_refresh_90;
@@ -231,8 +227,6 @@ public class RefreshSettingsFragment extends PreferenceFragment
         private final int[] items = {
                 R.string.refresh_default,
                 R.string.refresh_low,
-                R.string.refresh_moderate,
-                R.string.refresh_medium,
                 R.string.refresh_high,
                 R.string.refresh_extreme
         };
