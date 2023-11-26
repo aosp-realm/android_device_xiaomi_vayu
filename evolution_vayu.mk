@@ -13,10 +13,13 @@ $(call inherit-product, device/xiaomi/vayu/device.mk)
 
 # Inherit common AOSP configurations
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+
+# Evolution-X flags
 EVO_BUILD_TYPE := COMMUNITY
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_MIUI_CAMERA := true
+TARGET_USES_PICO_GAPPS := true
 
 PRODUCT_NAME := evolution_vayu
 PRODUCT_DEVICE := vayu
