@@ -126,7 +126,7 @@
 
         <activity
             android:name=".TileEntryActivity"
-            android:label="@string/xiaomiparts_label"
+            android:label="@string/deviceparts_label"
             android:theme="@style/Theme.SubSettingsBase"
             android:exported="true">
             <intent-filter>
