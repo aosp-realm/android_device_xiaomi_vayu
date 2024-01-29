@@ -83,6 +83,9 @@ sys.fflag.override.settings_seamless_transfer=true
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
+# Thermal
+vendor.sys.thermal.data.path=/data/vendor/thermal/
+
 # WFD
 debug.sf.enable_hwc_vds=1
 debug.sf.auto_latch_unsignaled=0
