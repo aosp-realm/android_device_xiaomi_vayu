@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
    libstdc++_vendor
 
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/vayu-miuicamera/products/miuicamera.mk)
 
 # Charger
 PRODUCT_PACKAGES += \
