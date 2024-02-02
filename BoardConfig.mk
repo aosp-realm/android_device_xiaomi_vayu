@@ -42,6 +42,11 @@ TARGET_OTA_ASSERT_DEVICE := vayu,bhima
 TARGET_BOOTLOADER_BOARD_NAME := msmnile
 TARGET_NO_BOOTLOADER := true
 
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+MALLOC_SVELTE := true
+MALLOC_SVELTE_FOR_LIBC32 := true
+
 # Display
 TARGET_USES_DISPLAY_RENDER_INTENTS := true
 TARGET_USES_DRM_PP := true
@@ -163,6 +168,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+include vendor/xiaomi/vayu-miuicamera/products/board.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
