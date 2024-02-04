@@ -407,7 +407,9 @@ PRODUCT_PACKAGES += \
    SystemUIOverlayVayu \
    TelephonyOverlayVayu \
    TetheringConfigOverlayVayu \
-   WifiOverlayVayu
+   WifiOverlayVayu \
+   GlobalOverlayVayu \
+   IndiaOverlayVayu
 
 # Perf
 PRODUCT_PACKAGES += \
