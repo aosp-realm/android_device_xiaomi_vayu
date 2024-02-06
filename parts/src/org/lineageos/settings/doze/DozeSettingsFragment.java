@@ -30,7 +30,7 @@ import android.widget.Switch;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -38,7 +38,7 @@ import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
 
-public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
+public class DozeSettingsFragment extends PreferenceFragmentCompat implements OnPreferenceChangeListener,
         OnMainSwitchChangeListener {
 
     private MainSwitchPreference mSwitchBar;

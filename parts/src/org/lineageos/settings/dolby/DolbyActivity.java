@@ -29,7 +29,7 @@ public class DolbyActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
                 new DolbySettingsFragment(), TAG_DOLBY).commit();
     }
 }
