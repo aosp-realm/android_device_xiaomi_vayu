@@ -328,8 +328,6 @@ vendor/lib/libfastcrc.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libsdsprpc.so
 vendor/lib/libsysmon_cdsp_skel.so
-vendor/lib64/libcdfw.so
-vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libmdsprpc.so
@@ -475,11 +473,11 @@ vendor/etc/init/qseecomd.rc
 vendor/etc/gpfspath_oem_config.xml
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libminksocket.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
+vendor/lib64/libminksocket.so
 vendor/lib64/libops.so
 vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
@@ -632,7 +630,6 @@ system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
--system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -743,19 +740,19 @@ vendor/lib64/libqcodec2.so
 -vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/dolby/dax-default.xml
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
-vendor/etc/media_codecs_dolby_audio.xml
 vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
+vendor/etc/media_codecs_dolby_audio.xml
+-vendor/lib/soundfx/libswdap.so
+-vendor/lib/soundfx/libswgamedap.so
+-vendor/lib/soundfx/libswvqe.so
 -vendor/lib/libdapparamstorage.so
 -vendor/lib/libdeccfg.so
 -vendor/lib/libstagefright_soft_ac4dec.so
 -vendor/lib/libstagefright_soft_ddpdec.so
--vendor/lib/soundfx/libswdap.so
--vendor/lib/soundfx/libswgamedap.so
--vendor/lib/soundfx/libswvqe.so
+-vendor/lib/vendor.dolby.hardware.dms@2.0.so
 -vendor/lib64/soundfx/libswdap.so
 -vendor/lib64/soundfx/libswgamedap.so
 -vendor/lib64/soundfx/libswvqe.so
--vendor/lib/vendor.dolby.hardware.dms@2.0.so
 -vendor/lib64/libdapparamstorage.so
 -vendor/lib64/libdlbdsservice.so
 -vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
@@ -839,7 +836,6 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so|7c89039a1d670ff6f92ada82bd1ff2c236
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
 vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 
@@ -932,7 +928,6 @@ vendor/lib64/libnlnetmgr.so
 vendor/lib64/liboemaids_vendor.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
-vendor/lib64/libqcbor.so
 vendor/lib64/libqcrilFramework.so
 vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqrtr.so
