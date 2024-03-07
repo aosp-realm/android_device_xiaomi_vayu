@@ -85,12 +85,6 @@ ro.vendor.display.sensortype=2
 vendor.display.idle_time=0
 vendor.display.idle_time_inactive=0
 
-# Dolby
-persist.vendor.audio_fx.current=dolby
-vendor.audio.dolby.ds2.enabled=true
-vendor.audio.dolby.ds2.hardbypass=true
-ro.vendor.audio.dolby.dax.support=true
-
 # DRM
 drm.service.enabled=true
 
