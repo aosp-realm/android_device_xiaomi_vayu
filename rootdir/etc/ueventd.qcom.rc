@@ -197,7 +197,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
-/dev/hw_random            0440   root       system
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
@@ -423,6 +422,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     modes                    0664    system  graphics
 /sys/class/graphics/fb0     mode                     0664    system  graphics
 /sys/class/graphics/fb0     msm_cmd_autorefresh_en   0664    system  graphics
+
+# socinfo
+/sys/devices/soc0           serial_number            0000    root    root
 
 #asm330 sensor
 #common sensors files

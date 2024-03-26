@@ -199,17 +199,6 @@ on charger
     chown system system /sys/class/leds/white/brightness
     write /sys/class/leds/white/brightness 255
 
-service vendor.spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
-    shutdown critical
-
-service vendor.sec_nvm /vendor/bin/sec_nvm
-    class core
-    user system
-    group system
-
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
    user root
@@ -219,24 +208,21 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service vendor.energy-awareness /vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
-
-service nv_mac /vendor/bin/nv_mac
+service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
     user system
     group system inet net_admin wifi net_raw
     oneshot
 
-service dcvs-sh /vendor/bin/init.qti.dcvs.sh
+service vendor.dcvs-sh /vendor/bin/init.qti.dcvs.sh
     class late_start
     user root
     group root system
     disabled
     oneshot
+
+on property:vendor.dcvs.prop=1
+   start vendor.dcvs-sh
 
 on property:vendor.post_boot.parsed=1
     # IRQ Tuning
@@ -244,9 +230,6 @@ on property:vendor.post_boot.parsed=1
     # IRQ 518: kgsl-3d0
     write /proc/irq/8/smp_affinity_list 2
     write /proc/irq/518/smp_affinity_list 1
-
-on property:vendor.dcvs.prop=1
-   start dcvs-sh
 
 on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
@@ -265,11 +248,6 @@ on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
     chmod 666 /mnt/vendor/persist/audio/tas25xx_calib.bin
     chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
-
-service remosaic_daemon /system/vendor/bin/remosaic_daemon
-   class late_start
-   user camera
-   group camera
 
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     override
