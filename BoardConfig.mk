@@ -24,6 +24,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
@@ -56,6 +57,7 @@ TARGET_DISABLED_UBWC := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
+TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
@@ -89,10 +91,8 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_CONFIG := vayu_defconfig
+  TARGET_KERNEL_CONFIG := vayu_user_defconfig
   TARGET_KERNEL_CLANG_COMPILE := true
-  TARGET_KERNEL_CLANG_VERSION := r498229b
-  TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/vayu
   TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 endif
@@ -123,9 +123,6 @@ $(foreach p, CACHE $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_T
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 BOARD_USES_METADATA_PARTITION := true
-
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Platform
 TARGET_BOARD_PLATFORM := msmnile

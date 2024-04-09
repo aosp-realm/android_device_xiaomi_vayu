@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
+ *               2017-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ import android.widget.Switch;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
 
 import com.android.settingslib.widget.MainSwitchPreference;
@@ -38,7 +38,7 @@ import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.settings.R;
 
-public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
+public class DozeSettingsFragment extends PreferenceFragmentCompat implements OnPreferenceChangeListener,
         OnMainSwitchChangeListener {
 
     private MainSwitchPreference mSwitchBar;
@@ -141,26 +141,19 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     }
 
     private void showHelp() {
-        HelpDialogFragment fragment = new HelpDialogFragment();
-        fragment.show(getFragmentManager(), "help_dialog");
-    }
-
-    public static class HelpDialogFragment extends DialogFragment {
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            return new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.doze_settings_help_title)
-                    .setMessage(R.string.doze_settings_help_text)
-                    .setNegativeButton(R.string.dialog_ok, (dialog, which) -> dialog.cancel())
-                    .create();
-        }
-
-        @Override
-        public void onCancel(DialogInterface dialog) {
-            getActivity().getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
-                    .edit()
-                    .putBoolean("first_help_shown", true)
-                    .commit();
-        }
+        AlertDialog helpDialog = new AlertDialog.Builder(getActivity())
+                .setTitle(R.string.doze_settings_help_title)
+                .setMessage(R.string.doze_settings_help_text)
+                .setPositiveButton(R.string.dialog_ok,
+                        (dialog, which) -> {
+                            getActivity()
+                                    .getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
+                                    .edit()
+                                    .putBoolean("first_help_shown", true)
+                                    .commit();
+                            dialog.cancel();
+                        })
+                .create();
+        helpDialog.show();
     }
 }

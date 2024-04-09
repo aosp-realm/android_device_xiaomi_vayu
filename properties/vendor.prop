@@ -8,6 +8,8 @@ persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.hifi=false
+persist.vendor.audio.misound.disable=true
+persist.vendor.audio.misoundasc=false
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.ring.filter.mask=0
 persist.vendor.audio.voicecall.speaker.stereo=true
@@ -108,6 +110,7 @@ persist.sys.sf.native_mode=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
+ro.surface_flinger.enable_frame_rate_override=false
 vendor.display.comp_mask=0
 vendor.display.disable_decimation=1
 vendor.display.disable_excl_rect=0
@@ -178,7 +181,6 @@ persist.vendor.radio.manual_nw_rej_ct=1
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.rat_on=combine
-persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sar_sar_sensor=true
 ro.telephony.iwlan_operation_mode=default
 
@@ -188,9 +190,6 @@ ro.soc.model=SM8150
 
 # System Shutdown
 sys.vendor.shutdown.waittime=500
-
-# Thermal
-vendor.sys.thermal.data.path=/data/vendor/thermal/
 
 # USB
 vendor.usb.product_string=Poco X3 Pro
