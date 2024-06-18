@@ -34,3 +34,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := POCO/vayu_global/vayu:13/RKQ1.200826.002/V14.0.3.0.TJUMIXM:user/release-keys
 
+# Private
+include vendor/extra/product.mk
+include vendor/arrow-priv/keys/keys.mk
