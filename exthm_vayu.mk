@@ -12,14 +12,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
 # Inherit common Arrow configurations
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/exthm/config/common.mk)
 
 # Feature flags
 TARGET_FACE_UNLOCK_SUPPORTED := true
 DEVICE_MAINTAINER := dogpoopy
 TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
 
-PRODUCT_NAME := arrow_vayu
+PRODUCT_NAME := exthm_vayu
 PRODUCT_DEVICE := vayu
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := Poco X3 Pro
@@ -35,5 +35,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := POCO/vayu_global/vayu:13/RKQ1.200826.002/V14.0.3.0.TJUMIXM:user/release-keys
 
 # Private
-include vendor/extra/product.mk
-include vendor/arrow-priv/keys/keys.mk
+include vendor/exthm-priv/keys/keys.mk
