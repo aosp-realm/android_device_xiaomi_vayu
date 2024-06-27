@@ -96,11 +96,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0.vendor \
-    android.hidl.memory.block@1.0 \
-    android.hidl.memory.block@1.0.vendor \
-    android.hidl.memory@1.0-impl \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
@@ -118,8 +113,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
    libstdc++.vendor
-
-$(call inherit-product-if-exists, vendor/xiaomi/vayu-miuicamera/products/miuicamera.mk)
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -252,6 +245,10 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
     libhwbinder.vendor
+
+PRODUCT_PACKAGES += \
+    android.hidl.memory.block@1.0 \
+    android.hidl.memory@1.0-impl
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \

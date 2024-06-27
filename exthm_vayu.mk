@@ -17,7 +17,6 @@ $(call inherit-product, vendor/exthm/config/common.mk)
 # Feature flags
 TARGET_FACE_UNLOCK_SUPPORTED := true
 DEVICE_MAINTAINER := dogpoopy
-TARGET_CAMERA_USES_NEWER_HIDL_OVERRIDE_FORMAT := true
 
 PRODUCT_NAME := exthm_vayu
 PRODUCT_DEVICE := vayu
